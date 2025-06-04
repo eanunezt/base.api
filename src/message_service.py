@@ -19,6 +19,9 @@ class MessageService:
         return False
     
     def delete_message(self, id):
-        print("Delete message method not implemented:", id)
-        pass
+        for i, msg in enumerate(self.messages):
+            if msg.get("id") == id:
+                self.messages[i] = None
+                return True
+        return False
 
