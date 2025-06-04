@@ -21,7 +21,7 @@ class MessageService:
     def delete_message(self, id):
         for i, msg in enumerate(self.messages):
             if msg.get("id") == id:
-                self.messages[i] = None
+                self.messages[i] = {}
                 return True
         return False
 
