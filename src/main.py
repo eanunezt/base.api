@@ -22,4 +22,12 @@ def update_message(id:str, message:Dict):
     if result:
         return { "message": "Message updated" }
     else:
+        return { "message": "Message not found" }
+    
+@app.put("/api/message/{id}")
+def delete_message(id:str):
+    result = my_servicio.delete_message(id)
+    if result:
+        return { "message": "Message updated" }
+    else:
         return { "message": "Message not found" }   
